@@ -1,0 +1,12 @@
+
+version: '3'
+services:
+  elk:
+    image: sebp/elk:630
+    volumes:
+     - ./logstash.conf:/etc/logstash/conf.d/logstash.conf
+     - ./elasticsearch.yml:/etc/elasticsearch/elasticsearch.yml
+    ports:
+     - "5601:5601"
+     - "9200:9200"
+     - "5044:5044"
